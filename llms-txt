@@ -1,0 +1,29 @@
+export default {
+  async fetch(request) {
+    const url = new URL(request.url);
+    if (url.pathname === "/llms.txt") {
+      return new Response(`# Musa Base
+> Linux, Arch Linux, BSD, and virtualization (QEMU/KVM) tutorials by Abdullah Musa. Practical, tested guides for daily Linux use, gaming on Linux, and advanced OS installation.
+
+## Core Guides
+- [Complete Arch Linux Roadmap](https://www.musabase.com/p/complete-arch-linux-roadmap.html): Full installation and setup path for Arch Linux.
+- [Linux Virtualization with QEMU/KVM](https://www.musabase.com/p/linux-virtualization-qemukvm-complete.html): Complete guide series for QEMU/KVM virtualization.
+- [Linux Gaming Roadmap](https://www.musabase.com/p/linux-gaming-roadmap-complete-musabase.html): Setting up and optimizing gaming on Linux.
+- [Best Hyprland Dotfiles](https://www.musabase.com/p/best-hyprland-dotfiles-for-linux.html): Compared and tested Hyprland dotfile setups.
+- [BSD Roadmap](https://www.musabase.com/p/complete-bsd-roadmap-installation.html): Installing and using OpenBSD/FreeBSD.
+
+## Popular Tutorials
+- [Single GPU Passthrough (QEMU/KVM VFIO)](https://www.musabase.com/2025/05/single-gpu-passthrough-on-vm.html)
+- [Install QEMU/KVM and Near-Native VMs](https://www.musabase.com/2025/03/how-to-install-near-native-vms-on-linux.html)
+- [Install Arch Linux with Btrfs](https://www.musabase.com/2026/06/how-to-install-arch-linux-with-btrfs-filesystem.html)
+
+## About
+- [About](https://www.musabase.com/p/about.html)
+- [Contact](https://www.musabase.com/p/contact-us.html)
+`, {
+        headers: { "content-type": "text/plain; charset=utf-8" }
+      });
+    }
+    return fetch(request);
+  }
+};
